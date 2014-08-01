@@ -11,36 +11,37 @@
 	  display: inline-block;
 	}
 	#github{
-		position: absolute;
-		top: 8px;
-		left: 8px;
+		padding: 8px 0px 0px 8px;
 		color: #000;
 		font-size: 30px;
 	}
 	#card{
 		font-family: "Helvetica", Arial, sans-serif;
 		display: inline-block;
-		width: 265px;
-		height: 300px;
-		overflow: hidden;
+		width: 250px;
+		height: auto;
 		border-radius: 6px;
-		position: relative;
 		background-color: #2E353C;
-		text-align: center;
 		color: #fff;
 		font-weight: 100;
-		transition: background 1000ms ease-out;
-		background: #fff; /*url('./github.png') no-repeat 5px 5px;*/
-		background-size: 25px;
+		background-color: #fff;
 		border: 1px solid #D5D5D5;
+		overflow: hidden;
+	}
+	#card.loading{
+		height: 200px !important;
+	}
+	#avatarContainer{
+		width:100%;
+		text-align: center;
 	}
 	#avatar{
 		position: relative;
 		display: inline-block;
-		margin: 20px 0 10px;
+		margin: 0;
 		border-radius: 100%;
 		height: 120px;
-		width: 120px;
+		width: 50%;
 		border: 3px solid #fff;
 		vertical-align: middle;
 		background-color: #fff;
@@ -52,16 +53,19 @@
 		position: relative;
 		top: -60px;
 		width: 100%;
-		height: 158px;
+		height: auto;
 		z-index: 1;
-		padding-top: 45px;
+		padding-top: 50px;
+		text-align: center;
 	}
 	h1{
 		font-size: 20px;
 		margin-bottom: 10px;
 	}
 	p{
+		width: 98%;
 		height: 50px;
+		margin: 0 auto;
 		margin-top: 0px;
 		color: #777;
 		font-size: 14px;
@@ -70,30 +74,36 @@
 		margin: 0 auto;
 		width: 95%;
 		border-top: 1px solid #777;
-		height: 50px;
+		padding-top: 20px;
+		height: 40px;
 	}
 	#data .octicon{
+		font-size: 20px;
 		color: #fff;
+		margin: 0px 10px;
 	}
 	</style>
 	
-	<div id="card">
-		<a href="{{data.html_url}}" target="_blank">
-			<div id="github" class="octicon octicon-mark-github"></div>
-		</a>
+	<div id="card" class="loading">
+		<div>
+			<a href="{{data.html_url}}" target="_blank">
+				<span id="github" class="octicon octicon-mark-github"></span>
+			</a>
+		</div>
 		
-		<a href="{{data.owner.html_url}}" target="_blank">
-			<img id="avatar" src="{{data.owner.avatar_url}}" />
-		</a>
+		<div id="avatarContainer">
+			<a href="{{data.owner.html_url}}" target="_blank">
+				<img id="avatar" src="{{data.owner.avatar_url}}" />
+			</a>
+		</div>
+		
 		<div id="content">
 			<h1>{{data.name}}</h1>
 			<p>{{data.description}}</p>
 			<div id="data">
-				<span class="octicon octicon-history"> XX</span>
-				<span class="octicon octicon-git-branch"></span>
-				<span class="octicon octicon-tag"></span>
-				<span class="octicon octicon-repo-forked"></span>
-				<span class="octicon octicon-organization"></span>
+				<span class="octicon octicon-star"> {{data.watchers_count}}</span>
+				<span class="octicon octicon-repo-forked"> {{data.forks_count}}</span>
+				<span class="octicon octicon-eye"> {{data.subscribers_count}}</span>
 			</div>
 		</div>
 		
@@ -107,13 +117,23 @@
 Polymer('github-project-card', {
 	user: 'josex2r',
 	project: 'github-project-card',
-	data : {},
+	data : {
+		name: 'Loading...'
+	},
 	ready: function() {
-		
+		var card = document.getElementById('card');
+		console.log(document.querySelector('#card'))
+		console.log(this.$)
+		window.card = this.$.card;
+	},
+	adjustHeight: function(){
+		this.$.card.className = '';
+		this.$.card.style.height = this.$.card.offsetHeight - 68 + 'px';
 	},
 	handleResponse: function(event, response) {
         //var component = document.querySelector('github-project-card');
         this.data = response.response;
+        this.adjustHeight();
    }
 });
 </script>

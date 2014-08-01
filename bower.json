@@ -7,8 +7,7 @@
   ],
   "description": "Polymer component to display github project data",
   "main": [
-    "./github-project-card/github-project-card.html",
-    "./github-project-card/github.png"
+    "./github-project-card/github-project-card.html"
   ],
   "license": "MIT",
   "ignore": [
