@@ -5,6 +5,7 @@
   "authors": [
     "joseX2R <jlrepresa@gmail.com>"
   ],
+  "keywords": ["web-components", "polymer", "github", "card", "repo", "project"],
   "description": "Polymer component to display github project data",
   "main": [
     "./github-project-card/github-project-card.html"
