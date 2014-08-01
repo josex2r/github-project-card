@@ -1,6 +1,6 @@
 #[github-project-card] (http://josex2r.github.io/github-project-card/)
 
-Polymer component to display github project data.
+Polymer component to display github project data. #[Check the example page!] (http://josex2r.github.io/github-project-card/)
 
 ![ScreenShot](https://raw.github.com/josex2r/github-project-card/master/screenshot.jpg)
 
