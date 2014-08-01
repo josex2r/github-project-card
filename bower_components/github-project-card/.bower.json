@@ -1,9 +1,17 @@
 {
   "name": "github-project-card",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/josex2r/github-project-card",
   "authors": [
     "joseX2R <jlrepresa@gmail.com>"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "github",
+    "card",
+    "repo",
+    "project"
   ],
   "description": "Polymer component to display github project data",
   "main": [
@@ -17,9 +25,23 @@
     "test",
     "tests"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:josex2r/github-project-card.git"
+  },
   "dependencies": {
     "core-ajax": "Polymer/core-ajax#~0.3.4",
     "polymer": "Polymer/polymer#~0.3.4",
     "octicons": "~2.1.1"
-  }
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "e69143ff944738d6174f014bfc98493f1e880936"
+  },
+  "_source": "git://github.com/josex2r/github-project-card.git",
+  "_target": "~0.0.1",
+  "_originalSource": "github-project-card",
+  "_direct": true
 }
