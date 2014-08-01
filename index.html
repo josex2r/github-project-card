@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Github Project Card</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <script src="bower_components/platform/platform.js"></script>
+    
+    <link rel="import" href="github-project-card/github-project-card.html">
+    
+    <link rel="stylesheet" href="bower_components/octicons/octicons/octicons.css">
+  </head>
+  <body>
+  	
+  	<github-project-card user="josex2r" project="jQuery-SlotMachine"></github-project-card>
+  	
+  	<github-project-card></github-project-card>
+  	
+  	<script>
+      // Wait for 'polymer-ready'. Ensures the element is upgraded.
+      window.addEventListener('polymer-ready', function(e) {
+        console.log("POLYMER READY");
+        
+      });
+    </script>
+
+  </body>
+</html>
