@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "homepage": "https://github.com/josex2r/github-project-card",
   "authors": [
-    "joseX2R <jlrepresa@gmail.com>"
+    "joseX2R <codex2r@gmail.com>"
   ],
   "keywords": ["web-components", "polymer", "github", "card", "repo", "project"],
   "description": "Polymer component to display github project data",
   "main": [
-    "./github-project-card/github-project-card.html"
+    "./github-project-card.html"
   ],
   "license": "MIT",
   "ignore": [
