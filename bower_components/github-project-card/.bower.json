@@ -1,9 +1,9 @@
 {
   "name": "github-project-card",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/josex2r/github-project-card",
   "authors": [
-    "joseX2R <jlrepresa@gmail.com>"
+    "josex2r <codex2r@gmail.com>"
   ],
   "keywords": [
     "web-components",
@@ -15,7 +15,7 @@
   ],
   "description": "Polymer component to display github project data",
   "main": [
-    "./github-project-card/github-project-card.html"
+    "./github-project-card.html"
   ],
   "license": "MIT",
   "ignore": [
@@ -30,18 +30,18 @@
     "url": "git@github.com:josex2r/github-project-card.git"
   },
   "dependencies": {
-    "core-ajax": "Polymer/core-ajax#~0.3.4",
-    "polymer": "Polymer/polymer#~0.3.4",
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-ajax": "PolymerElements/iron-ajax#1.0.0",
     "octicons": "~2.1.1"
   },
-  "_release": "0.0.1",
+  "_release": "1.0.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.0.1",
-    "commit": "e69143ff944738d6174f014bfc98493f1e880936"
+    "tag": "1.0.0",
+    "commit": "a3db8492a9007200e350f667f2cd2544ec6d560d"
   },
   "_source": "git://github.com/josex2r/github-project-card.git",
-  "_target": "~0.0.1",
+  "_target": "~1.0.0",
   "_originalSource": "github-project-card",
   "_direct": true
 }

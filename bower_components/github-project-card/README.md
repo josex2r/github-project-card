@@ -1,4 +1,5 @@
 #&lt;github-project-card&gt;
+Now using Polymer 1.0!
 
 Polymer component to display github project data. [Check the example page!] (http://josex2r.github.io/github-project-card/)
 
@@ -45,7 +46,7 @@ Github author username
 
 ### project
 Github project name
-    
+
 ## Authors
 
 [Jose Luis Represa](https://github.com/josex2r)
