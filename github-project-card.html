@@ -1,141 +1,162 @@
-<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
 
-<polymer-element name="github-project-card" attributes="user project">
+<dom-module id="github-project-card">
 
-<template>
-	
-	<link rel="stylesheet" href="../octicons/octicons/octicons.css">
-	
 	<style>
-	:host {
-	  display: inline-block;
-	}
-	#github{
-		padding: 8px 0px 0px 8px;
-		color: #000;
-		font-size: 30px;
-	}
-	#card{
-		font-family: "Helvetica", Arial, sans-serif;
-		display: inline-block;
-		width: 250px;
-		height: auto;
-		border-radius: 6px;
-		background-color: #2E353C;
-		color: #fff;
-		font-weight: 100;
-		background-color: #fff;
-		border: 1px solid #D5D5D5;
-		overflow: hidden;
-	}
-	#card.loading{
-		height: 200px !important;
-	}
-	#avatarContainer{
-		width:100%;
-		text-align: center;
-	}
-	#avatar{
-		position: relative;
-		display: inline-block;
-		margin: 0;
-		border-radius: 100%;
-		height: 120px;
-		width: 50%;
-		border: 3px solid #fff;
-		vertical-align: middle;
-		background-color: #fff;
-		z-index: 2;
-	}
-	#content{
-		background-color: #2E353C;
-		border-top: 1px groove #999;
-		position: relative;
-		top: -60px;
-		width: 100%;
-		height: auto;
-		z-index: 1;
-		padding-top: 50px;
-		text-align: center;
-	}
-	h1{
-		font-size: 20px;
-		margin-bottom: 10px;
-	}
-	p{
-		width: 98%;
-		height: 50px;
-		margin: 0 auto;
-		margin-top: 0px;
-		color: #777;
-		font-size: 14px;
-	}
-	#data{
-		margin: 0 auto;
-		width: 95%;
-		border-top: 1px solid #777;
-		padding-top: 20px;
-		height: 40px;
-	}
-	#data .octicon{
-		font-size: 20px;
-		color: #fff;
-		margin: 0px 10px;
-	}
+		:host {
+			display: inline-block;
+		}
 	</style>
-	
-	<div id="card" class="loading">
-		<div>
-			<a href="{{data.html_url}}" target="_blank">
-				<span id="github" class="octicon octicon-mark-github"></span>
-			</a>
-		</div>
-		
-		<div id="avatarContainer">
-			<a href="{{data.owner.html_url}}" target="_blank">
-				<img id="avatar" src="{{data.owner.avatar_url}}" />
-			</a>
-		</div>
-		
-		<div id="content">
-			<h1>{{data.name}}</h1>
-			<p>{{data.description}}</p>
-			<div id="data">
-				<span class="octicon octicon-star"> {{data.watchers_count}}</span>
-				<span class="octicon octicon-repo-forked"> {{data.forks_count}}</span>
-				<span class="octicon octicon-eye"> {{data.subscribers_count}}</span>
+
+	<template>
+
+		<link rel="stylesheet" href="../octicons/octicons/octicons.css">
+		<style>
+			#github{
+				padding: 8px 0px 0px 8px;
+				color: #000;
+				font-size: 30px;
+			}
+			#card{
+				font-family: "Helvetica", Arial, sans-serif;
+				display: inline-block;
+				width: 250px;
+				height: auto;
+				border-radius: 6px;
+				background-color: #2E353C;
+				color: #fff;
+				font-weight: 100;
+				background-color: #fff;
+				border: 1px solid #D5D5D5;
+				overflow: hidden;
+			}
+			#card.loading{
+				height: 200px !important;
+			}
+			#avatarContainer{
+				width:100%;
+				text-align: center;
+			}
+			#avatar{
+				position: relative;
+				display: inline-block;
+				margin: 0;
+				border-radius: 100%;
+				height: 120px;
+				width: 50%;
+				border: 3px solid #fff;
+				vertical-align: middle;
+				background-color: #fff;
+				z-index: 2;
+			}
+			#content{
+				background-color: #2E353C;
+				border-top: 1px groove #999;
+				margin-top: -60px;
+				width: 100%;
+				height: auto;
+				z-index: 1;
+				padding-top: 50px;
+				text-align: center;
+			}
+			h1{
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			p{
+				width: 98%;
+				height: 50px;
+				margin: 0 auto;
+				margin-top: 0px;
+				color: #777;
+				font-size: 14px;
+			}
+			#data{
+				margin: 0 auto;
+				width: 95%;
+				border-top: 1px solid #777;
+				padding-top: 20px;
+				height: 40px;
+			}
+			#data .octicon{
+				font-size: 20px;
+				color: #fff;
+				margin: 0px 10px;
+			}
+		</style>
+
+		<div id="card" class="loading">
+			<div>
+				<a href="{{data.html_url}}" target="_blank">
+					<span id="github" class="octicon octicon-mark-github"></span>
+				</a>
 			</div>
+
+			<div id="avatarContainer">
+				<a href="{{data.owner.html_url}}" target="_blank">
+					<img id="avatar" src="{{data.owner.avatar_url}}" />
+				</a>
+			</div>
+
+			<div id="content">
+				<h1>{{data.name}}</h1>
+				<p>{{data.description}}</p>
+				<div id="data">
+					<span class="octicon octicon-star"><span>{{data.watchers_count}}</span>
+					<span class="octicon octicon-repo-forked"></span><span>{{data.forks_count}}</span>
+					<span class="octicon octicon-eye"></span><span>{{data.subscribers_count}}</span>
+				</div>
+			</div>
+
 		</div>
-		
-	</div>
-	
-	<core-ajax auto url="https://api.github.com/repos/{{user}}/{{project}}" handleAs="json" on-core-response="{{handleResponse}}" response="{{response}}"></core-ajax>
-	
-</template>
-  
-<script>
-Polymer('github-project-card', {
-	user: 'josex2r',
-	project: 'github-project-card',
-	data : {
-		name: 'Loading...'
-	},
-	ready: function() {
-		var card = document.getElementById('card');
-		console.log(document.querySelector('#card'))
-		console.log(this.$)
-		window.card = this.$.card;
-	},
-	adjustHeight: function(){
-		this.$.card.className = '';
-		this.$.card.style.height = this.$.card.offsetHeight - 68 + 'px';
-	},
-	handleResponse: function(event, response) {
-        //var component = document.querySelector('github-project-card');
-        this.data = response.response;
-        this.adjustHeight();
-   }
-});
-</script>
+
+		<iron-ajax
+			auto
+			url="{{ajaxUrl}}"
+			handle-as="json"
+			on-response="_handleResponse"
+			last-response="{{data}}"
+			debounce-duration="300">
+		</iron-ajax>
+
+	</template>
+
+	<script>
+		Polymer({
+			is: 'github-project-card',
+
+			properties: {
+				user: {
+					type: String,
+					value: 'josex2r'
+				},
+				project: {
+					type: String,
+					value: 'github-project-card'
+				},
+				ajaxUrl: {
+					type: String,
+					computed: '_makeUrl(user, project)'
+				}
+			},
+
+			data : {
+				name: 'Loading...'
+			},
+
+			_makeUrl: function(user, project){
+				return 'https://api.github.com/repos/' + user + '/' + project;
+			},
+
+			adjustHeight: function(){
+				this.$.card.className = '';
+				this.$.card.style.height = this.$.card.offsetHeight - 68 + 'px';
+			},
+
+			_handleResponse: function(response) {
+		    this.adjustHeight();
+		  }
+		});
+	</script>
 
 </polymer-element>
